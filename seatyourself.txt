@@ -15,7 +15,7 @@ country
 
 password
 
-## Sessions
+# Sessions
 -Controls user session
 -Log in page
 
@@ -28,6 +28,7 @@ name
 cuisine_type
 price_range
 rating
+capacity
 
 
 
