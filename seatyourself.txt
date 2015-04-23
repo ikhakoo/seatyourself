@@ -39,3 +39,9 @@ name
 party_size
 booking_time
 
+-User can make a reservation
+-The available time is removed in 1 hour blocks
+-Update capacity to decrase based on reservation amount
+-When capacity = 0 at a specifice time block you can't reserve
+-Capactiy = Capacity - party size
+

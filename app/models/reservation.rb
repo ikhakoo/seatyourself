@@ -1,4 +1,4 @@
 class Reservation < ActiveRecord::Base
 	belongs_to :restaurant
-	belong_to :user
+	belongs_to :user
 end
