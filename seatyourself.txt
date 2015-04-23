@@ -1,0 +1,40 @@
+## User
+create, new
+
+-Create Account
+-Make reservations
+-Search for restaurants
+
+Fields:
+
+first_name
+last_name
+email
+city
+country
+
+password
+
+## Sessions
+-Controls user session
+-Log in page
+
+
+
+## Restaurants
+index show
+
+name
+cuisine_type
+price_range
+rating
+
+
+
+## Reservations
+index
+
+name
+party_size
+booking_time
+
