@@ -1,6 +1,7 @@
 <br>
 <br>
 <br>
+<% if current_user %>
   <h4>New Reservation</h4>
   <div class="well">
   <%= form_for([@restaurant, @reservation]) do |f| %>
@@ -31,5 +32,8 @@
     <div class="actions">
       <%= f.submit %>
     </div>
-    </div>
-  <% end %>
+    <% end %>
+    <% else %>
+    <h2>You must be logged in to create a reservation.</h2>
+<% end %>
+  

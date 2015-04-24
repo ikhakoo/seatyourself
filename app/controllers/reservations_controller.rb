@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   	@restaurant = load_restaurant
   	@reservation = @restaurant.reservations.build(res_params)
   	if @reservation.save
-      redirect_to root_path, notice: 'Reservation created successfully'
+      redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
     else
       render 'restaurants/show'
     end
