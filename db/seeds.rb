@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Restaurant.create(
+    name: 'The Keg',
+    cuisine_type: 'Steakhouse',
+    price_range: 4,
+    rating: 5,
+    capacity: 50
+)
+Restaurant.create(
+    name: 'McDonald\'s',
+    cuisine_type: 'Fast Food',
+    price_range: 1,
+    rating: 2,
+    capacity: 50
+)
+Restaurant.create(
+    name: 'Chipotle',
+    cuisine_type: 'Mexican',
+    price_range: 2,
+    rating: 5,
+    capacity: 50
+)

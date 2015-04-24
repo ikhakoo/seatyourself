@@ -6,7 +6,6 @@ class ReservationsController < ApplicationController
   def create
   	@restaurant = load_restaurant
   	@reservation = @restaurant.reservations.build(res_params)
-  	@reservation.user = current_user
   	if @reservation.save
       redirect_to root_path, notice: 'Reservation created successfully'
     else
