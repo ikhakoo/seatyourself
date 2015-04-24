@@ -3,6 +3,7 @@ class UserMailer < ApplicationMailer
  
   def conf_email(user)
     @user = user
+    # @restaurant = restaurant
     mail(to: @user.email, subject: 'Reservation Confirmation')
   end
 end

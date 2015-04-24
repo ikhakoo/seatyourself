@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
 
   private
   def res_params
-    params.require(:reservation).permit(:name, :party_size, :booking_time)
+    params.require(:reservation).permit(:name, :party_size, :booking_date, :booking_time)
   end
 
   def load_restaurant

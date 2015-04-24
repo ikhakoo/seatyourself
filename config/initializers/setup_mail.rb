@@ -8,4 +8,4 @@ ActionMailer::Base.smtp_settings = {
   :password             => "testingdb",
   :authentication       => "plain",
   :enable_starttls_auto => true
-}
+}	

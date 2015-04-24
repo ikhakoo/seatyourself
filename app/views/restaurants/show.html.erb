@@ -26,8 +26,14 @@
     <%= f.text_field :party_size %>
   </div>
   <div class="field">
-    <%= f.label :booking_time %><br/>
-    <%= f.datetime_select :booking_time %>
+
+    <%= f.label :booking_date %>
+    <%= f.date_select :booking_date %>
+    <br/>
+
+    <%= f.label :booking_time %>
+    <%= f.select :booking_time, options_for_select(@restaurant.hour_options) %>
+
   </div>
     <div class="actions">
       <%= f.submit %>
