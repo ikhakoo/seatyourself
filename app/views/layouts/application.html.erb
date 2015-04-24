@@ -30,7 +30,7 @@
                   </ul>
                   <% if current_user %>
                   <ul class="nav navbar-nav navbar-right">
-                  <li><%= link_to_unless_current('Profile', root_path(current_user.id)) {  link_to('Profile', root_path(current_user.id), class: 'active' ) } %></li>
+                  <li><%= link_to_unless_current('My Reservations', root_path(current_user.id)) {  link_to('My Reservations', root_path(current_user.id), class: 'active' ) } %></li>
                   </ul>
                     <p class="navbar-text navbar-right">Signed in as <%= current_user.first_name %> <%= link_to "Log out", session_path("current"), :method => :delete %></p>
                   <% else %>
