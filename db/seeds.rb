@@ -7,20 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Restaurant.create(
-    name: 'The Keg',
-    cuisine_type: 'Steakhouse',
+    name: 'Jack Astor\'s',
+    cuisine_type: 'Bar',
     price_range: 4,
     rating: 5,
-    capacity: 50,
+    capacity: 150,
+    current_capacity: 150,
     opening: 12,
     closing: 24
 )
 Restaurant.create(
-    name: 'McDonald\'s',
-    cuisine_type: 'Fast Food',
+    name: 'Real Sports Bar and Grill',
+    cuisine_type: 'Bar',
     price_range: 1,
     rating: 2,
-    capacity: 50,
+    capacity: 250,
+    current_capacity: 250,
     opening: 12,
     closing: 24
 )
@@ -30,6 +32,7 @@ Restaurant.create(
     price_range: 2,
     rating: 5,
     capacity: 50,
+    current_capacity: 50,
     opening: 12,
     closing: 24
 )

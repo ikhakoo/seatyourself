@@ -6,7 +6,8 @@ class ReservationsController < ApplicationController
   def create
   	@restaurant = load_restaurant
   	@reservation = @restaurant.reservations.build(res_params)
-    @reservation.end_res
+    # @reservation.end_res
+    # @restaurant.current_cap
   	if @reservation.save
       redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
       UserMailer.conf_email(current_user).deliver_now
@@ -29,6 +30,8 @@ class ReservationsController < ApplicationController
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
+
+  
 end
 
 

@@ -45,3 +45,12 @@ booking_time
 -When capacity = 0 at a specifice time block you can't reserve
 -Capactiy = Capacity - party size
 
+
+
+How to build reservations:
+
+1. User Makes Reservation
+2. The party size is checked vs current_capacity
+3. if available, current_capacity = current_capacity - party_size else they are returned with cannot book
+
+
