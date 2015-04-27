@@ -15,8 +15,4 @@ class Restaurant < ActiveRecord::Base
 		end
 	end
 
-	# def current_cap
-	# 	current_capacity = current_capacity - party_size
-	# end
-
 end

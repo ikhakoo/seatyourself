@@ -6,8 +6,9 @@ class ReservationsController < ApplicationController
   def create
   	@restaurant = load_restaurant
   	@reservation = @restaurant.reservations.build(res_params)
-    # @reservation.end_res
-    # @restaurant.current_cap
+    @reservation.user_id = current_user.id
+    @reservation.end_time = @reservation.booking_time + 2.hours
+    @restaurant.current_capacity = @restaurant.current_capacity - @reservation.party_size
   	if @reservation.save
       redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
       UserMailer.conf_email(current_user).deliver_now

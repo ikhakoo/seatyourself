@@ -2,14 +2,10 @@ class Reservation < ActiveRecord::Base
 	belongs_to :restaurant
 	belongs_to :user
 
-	# def end_res
- #    end_time = booking_time + 2.hours 
- #  end
-
-  # def del_res
+  # while True
   # 	time = Time.now
 		#   if end_time > time
-		#   	current_capacity = current_capacity + party_size
+		#   	@restaurant.current_capacity = @restaurant.current_capacity + @reservation.party_size
 		#   else
 		#   	return
 		#   end
