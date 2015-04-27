@@ -1,20 +1,20 @@
 class ReservationsController < ApplicationController
+
   def new
   	@reservation = Reservation.new
   end
 
   def create
-  	@restaurant = load_restaurant
+  	load_restaurant
+  
   	@reservation = @restaurant.reservations.build(res_params)
-  	if @reservation.party_size < @restaurant.current_capacity 
-        @reservation.user_id = current_user.id #set user id
-        @reservation.end_time = @reservation.booking_time + 2.hours #set end time
-        @restaurant.current_capacity = @restaurant.current_capacity - @reservation.party_size #set current capacity
-        @reservation.save #save reservation
-        redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
-        UserMailer.conf_email(current_user).deliver_now
+    @reservation.user = current_user
+
+  	if @reservation.save
+      redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
+      UserMailer.conf_email(current_user).deliver_now
     else
-       redirect_to root_path notice: 'Your party size is greater than what is available. Please select a different time or venue.'
+      render :new
     end
   end
 
@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
   def destroy
   end
 
-  private
+private
   def res_params
     params.require(:reservation).permit(:name, :party_size, :booking_date, :booking_time)
   end
