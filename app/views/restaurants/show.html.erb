@@ -27,12 +27,12 @@
   </div>
   <div class="field">
 
-    <%= f.label :booking_date %>
-    <%= f.date_select :booking_date %>
+    <%= f.label :date %>
+    <%= f.date_select :date %>
     <br/>
 
-    <%= f.label :booking_time %>
-    <%= f.select :booking_time, options_for_select(@restaurant.hour_options) %>
+    <%= f.label :time %>
+    <%= f.select :time, options_for_select(@restaurant.hour_options) %>
 
   </div>
     <div class="actions">

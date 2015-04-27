@@ -25,6 +25,8 @@ puts "\nCreating users ..."
     print "|"
 end
 
+User.create(email: "test@test.test", password: "test")
+
 puts "\nCreating reservations ..."
 20.times do
     date = Date.today + rand(0..3).days
