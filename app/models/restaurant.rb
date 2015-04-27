@@ -2,8 +2,8 @@ class Restaurant < ActiveRecord::Base
 	has_many :reservations
 	has_many :users, through: :reservations
 
-	def availability(date, hour)
-		current_fullness = reservation.where(date: date, hour: hour).map(&:party_size).sum
+	def availability(date, time)
+		current_fullness = reservations.where(date: date, time: time).map(&:party_size).sum
 		capacity - current_fullness
 	end
 
