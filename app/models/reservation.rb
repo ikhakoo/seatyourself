@@ -8,7 +8,7 @@ class Reservation < ActiveRecord::Base
 		#   	@restaurant.current_capacity = @restaurant.current_capacity + @reservation.party_size
 		#     @reservation.end_time = nil
 		#   else
-		#   	return
+		#   	continue
 		#   end
   # end
 

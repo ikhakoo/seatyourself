@@ -6,10 +6,16 @@ class ReservationsController < ApplicationController
   def create
   	@restaurant = load_restaurant
   	@reservation = @restaurant.reservations.build(res_params)
-  	if @reservation.party_size < @restaurant.current_capacity 
+
+    # Don't store current_capacity
+    # Calculate based on existing reservations *between* the booking time and end_time
+    current_capacity = @restaurant.reservations
+                                  .where('booking_time < :date AND end_time > :date', date: @reservation.booking_time )
+                                  .map(&:party_size).sum
+
+  	if @reservation.party_size < current_capacity
         @reservation.user_id = current_user.id #set user id
         @reservation.end_time = @reservation.booking_time + 2.hours #set end time
-        @restaurant.current_capacity = @restaurant.current_capacity - @reservation.party_size #set current capacity
         @reservation.save #save reservation
         redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
         UserMailer.conf_email(current_user).deliver_now

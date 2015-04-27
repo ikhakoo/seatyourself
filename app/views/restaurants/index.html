@@ -6,19 +6,18 @@
 <br>
 <br>
 <% @restaurants.each do |restaurant| %>
-<div class="well">
-  <p>Name: <%= restaurant.name %><br>
-		 Cuisine Type: <%= restaurant.cuisine_type %> <br>
-		 Price Range: <%= restaurant.price_range %></p>
-		 Total Capacity: <%= restaurant.capacity %></p>
-		 Current Capacity: <%= restaurant.current_capacity %></p>
-	</p>
-	
-	<p class="btn btn-default">
-		<%= link_to 'Make a Reservation', "/restaurants/#{restaurant.id}" %>
-	</p>	
-	<br>
-	<br>
-</div>
-</div>
+	<div class="well">
+	  <p>Name: <%= restaurant.name %><br>
+			 Cuisine Type: <%= restaurant.cuisine_type %> <br>
+			 Price Range: <%= restaurant.price_range %></p>
+			 Total Capacity: <%= restaurant.capacity %></p>
+			 Current Capacity: <%= restaurant.current_capacity %></p>
+		</p>
+		
+		<p class="btn btn-default">
+			<%= link_to 'Make a Reservation', "/restaurants/#{restaurant.id}" %>
+		</p>	
+		<br>
+		<br>
+	</div>
 <% end %>

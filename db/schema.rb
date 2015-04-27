@@ -19,9 +19,8 @@ ActiveRecord::Schema.define(version: 20150425231647) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "restaurant_id"
-    t.date     "booking_date"
-    t.time     "booking_time"
-    t.time     "end_time"
+    t.datetime "booking_time"
+    t.datetime "end_time"
     t.integer  "user_id"
   end
 
