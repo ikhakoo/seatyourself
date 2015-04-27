@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
       redirect_to root_path, notice: 'Reservation created successfully. Please check your e-mail for confirmation'
       UserMailer.conf_email(current_user).deliver_now
     else
-      render :new
+      redirect_to root_path
     end
   end
 
